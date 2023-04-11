@@ -1378,6 +1378,7 @@ export default {
 				<canvas v-if="canvas" ref="canvas" :style="{ display: 'none' }" />
 				<canvas v-if="canvas" ref="sourceCanvas" :style="{ display: 'none' }" />
 			</component>
+			<slot name="boundaries" />
 		</div>
 	</div>
 </template>
