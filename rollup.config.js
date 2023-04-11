@@ -4,35 +4,43 @@ import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import resolve from '@rollup/plugin-node-resolve';
 import url from '@rollup/plugin-url';
-import external from 'rollup-plugin-peer-deps-external';
 import vue from 'rollup-plugin-vue';
 import { terser } from 'rollup-plugin-terser';
 import scss from 'rollup-plugin-scss';
 import typescript from '@rollup/plugin-typescript';
 import pkg from './package.json';
 
+const output = [
+	{
+		file: pkg.module,
+		format: `es`,
+	},
+	{
+		file: pkg.main,
+		format: `cjs`,
+	},
+	{
+		file: pkg.unpkg,
+		format: `iife`,
+	},
+	{
+		file: pkg.browser || pkg.module.replace('bundler', 'browser'),
+		format: `es`,
+	},
+];
+
 export default {
+	external: ['vue'],
 	input: 'src/index.js',
-	output: [
-		{
-			file: pkg.main,
-			format: 'cjs',
-			sourcemap: process.env.NODE_ENV !== 'production',
+	output: output.map((config) => ({
+		...config,
+		name: config.format === 'iife' ? 'VueAdvancedCropper' : undefined,
+		globals: {
+			vue: 'Vue',
 		},
-		{
-			file: pkg.module,
-			format: 'es',
-			sourcemap: process.env.NODE_ENV !== 'production',
-		},
-		{
-			file: pkg.umd,
-			format: 'umd',
-			sourcemap: process.env.NODE_ENV !== 'production',
-			name: 'vue-advanced-cropper',
-		},
-	],
+		sourcemap: process.env.NODE_ENV !== 'production',
+	})),
 	plugins: [
-		external(),
 		scss({
 			output: './dist/style.css',
 		}),

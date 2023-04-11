@@ -2,8 +2,7 @@
 <br/>
 <p align="center">
   <a href="https://npmcharts.com/compare/vue-advanced-cropper?minimal=true"><img src="https://img.shields.io/npm/dm/vue-advanced-cropper.svg?sanitize=true" alt="Downloads"></a>
-  <a href="https://www.npmjs.com/package/vue-advanced-cropper"><img src="https://img.shields.io/npm/v/vue-advanced-cropper/vue-3.svg?sanitize=true" alt="Version"></a>
-  <a href="https://www.npmjs.com/package/vue-advanced-cropper"><img src="https://img.shields.io/npm/v/vue-advanced-cropper/vue-2.svg?sanitize=true" alt="Version"></a>
+  <a href="https://www.npmjs.com/package/vue-advanced-cropper"><img src="https://img.shields.io/npm/v/vue-advanced-cropper/latest.svg?sanitize=true" alt="Version"></a>
   <a href="https://www.npmjs.com/package/vue-advanced-cropper"></a>
   <br>
  	<a href="https://advanced-cropper.github.io/vue-advanced-cropper/" target="_blank" rel="noopener noreferrer">Documentation</a> /
@@ -15,7 +14,7 @@
 
 ---
 
-:fire: **HEADS UP!** You're currently looking at the branch for Vue 2. If you're looking for the branch for Vue 3, [please check out `vue-next` branch](https://github.com/advanced-cropper/vue-advanced-cropper/tree/vue-next).
+:fire: **HEADS UP!** You're currently looking at the branch for Vue 3. If you're looking for the branch for Vue 2, [please check out `master` branch](https://github.com/advanced-cropper/vue-advanced-cropper).
 
 ---
 
@@ -39,11 +38,11 @@ The codesandbox for [mobile](https://codesandbox.io/s/vue-advanced-cropper-mobil
 ### Vue 3.0
 
 ```bash
-npm install --save vue-advanced-cropper
+npm install --save vue-advanced-cropper@next
 ```
 
 ```bash
-yarn add vue-advanced-cropper
+yarn add vue-advanced-cropper@next
 ```
 
 ### Vue 2.0
